@@ -45,7 +45,7 @@ func main() {
 	//target := flag.String("target", "", "the target you want to create")
 	room := flag.String("room", "", "the room you want to create")
 	joinRoom := flag.String("join", "", "the target you want to join")
-	bootstrap := flag.String("bootstrap", "/ip4/134.209.171.195/tcp/5000/p2p/QmWpBxWhq8G9G9m2yxc314Hfmd39PiHuWC5EJv3xZz9KxZ", "the relay")
+	bootstrap := flag.String("bootstrap", "/ip4/119.8.58.38/tcp/5000/p2p/QmbSUTgoPDgRqP5S1Zz2fJJhtg8MFiQna3XAQTQRk9nDSG", "the relay")
 
 	flag.Parse()
 
