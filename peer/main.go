@@ -123,15 +123,16 @@ func main() {
 
 	time.Sleep(time.Second * 2)
 
+	host.SetStreamHandler(protocolKey(*room), handleStream)
 	// now do chat specific stuff
 	if *room != "" {
-		host.SetStreamHandler(protocolKey(*room), handleStream)
 		fmt.Println("Waiting for connections")
 
 		select {}
 	}
 
 	if *joinRoom != "" {
+		fmt.Println("Waiting for connections")
 		fmt.Printf("Joining target %s\n", protocolKey(*joinRoom))
 		peerChan, err := routingDiscovery.FindPeers(ctx, string(protocolKey(*joinRoom)))
 		if err != nil {
