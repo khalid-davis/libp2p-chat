@@ -168,12 +168,11 @@ func main() {
 						go handleStream(stream)
 						break
 					}
+				} else {
+					fmt.Println("connection vair relay fail: ", err)
 				}
 			}
 		}
-
-		fmt.Println("We got nothing")
-
 	}
 
 	select {}
