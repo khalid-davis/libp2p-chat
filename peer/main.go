@@ -123,7 +123,7 @@ func main() {
 
 	time.Sleep(time.Second * 2)
 
-	host.SetStreamHandler(protocolKey(*room), handleStream)
+	host.SetStreamHandler(protocolKey(ad), handleStream)
 	// now do chat specific stuff
 	if *room != "" {
 		fmt.Println("Waiting for connections")
