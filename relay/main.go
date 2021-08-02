@@ -9,6 +9,7 @@ import (
 
 	"fmt"
 	"github.com/libp2p/go-libp2p"
+	circuit "github.com/libp2p/go-libp2p-circuit"
 	"github.com/libp2p/go-libp2p-core/crypto"
 	"github.com/libp2p/go-libp2p-kad-dht/dual"
 	"golang.org/x/net/context"
@@ -55,6 +56,8 @@ func main() {
 		ctx,
 		libp2p.ListenAddrs(sourceMultiAddr),
 		libp2p.Identity(priv),
+		libp2p.EnableRelay(circuit.OptHop),
+		libp2p.ForceReachabilityPrivate(),
 		libp2p.EnableNATService(),
 		libp2p.AddrsFactory(addressFactory),
 	)

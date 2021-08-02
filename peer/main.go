@@ -71,7 +71,9 @@ func main() {
 	listenAddress := libp2p.ListenAddrStrings("/ip4/0.0.0.0/tcp/0")
 
 
-	host, err := libp2p.New(ctx, listenAddress, routing, libp2p.NATPortMap(), libp2p.EnableAutoRelay())
+	host, err := libp2p.New(ctx, listenAddress, routing, libp2p.NATPortMap(),
+		libp2p.EnableRelay(),
+		libp2p.EnableAutoRelay())
 	if err != nil {
 		panic(err)
 	}
